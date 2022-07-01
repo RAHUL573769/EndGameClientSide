@@ -28,6 +28,7 @@ const SingleTodo = ({ t }) => {
     <div>
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
+          <input type="checkbox" name="" id="" />
           <h2 class="card-title">{t.name}</h2>
           <p>{t.assigner}</p>
           <p>{t.day}</p>
