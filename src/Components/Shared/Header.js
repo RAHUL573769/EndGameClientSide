@@ -11,7 +11,7 @@ const Header = () => {
         <Link to="/todo">To-Do</Link>
       </li>
       <li>
-        <Link to="/menu3">Menu 3</Link>
+        <Link to="/completed">Completed Section</Link>
       </li>
 
       {/* <li>

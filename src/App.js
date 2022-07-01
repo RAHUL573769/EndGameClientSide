@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Calender from "./Components/Calender/Calender";
+import Completed from "./Components/CompletedSection/Completed";
 import HomePage from "./Components/HomePage/HomePage";
 import Header from "./Components/Shared/Header";
 import ToDo from "./Components/ToDo/ToDo";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/update/:id" element={<Updating></Updating>}></Route>
 
         <Route path="/calender" element={<Calender></Calender>}></Route>
+        <Route path="/completed" element={<Completed></Completed>}></Route>
       </Routes>
     </div>
   );

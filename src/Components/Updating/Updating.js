@@ -23,6 +23,7 @@ const Updating = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        window.location.reload();
         toast("Data Updated Successfully");
       });
   };
@@ -36,7 +37,7 @@ const Updating = () => {
       .then((data) => setUser(data));
   });
 
-  //   console.log(user);
+  console.log(user);
   return (
     <div>
       <form
@@ -66,7 +67,11 @@ const Updating = () => {
       </form>
       <ToastContainer />
 
-      <h1 className="text-center text-bold">Updating User:{user.name}</h1>
+      <h1 className="text-center text-bold">
+        {" "}
+        User After Updating:{user.name} <br />
+        Day after Updating:{user.day}
+      </h1>
     </div>
   );
 };
