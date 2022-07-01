@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleTodo = ({ t }) => {
   const handleDelete = (_id) => {
@@ -28,7 +29,9 @@ const SingleTodo = ({ t }) => {
           <p>{t.assigner}</p>
           <p>{t.day}</p>
           <div class="card-actions justify-end">
-            <button class="btn btn-active btn-info">Edit</button>
+            <Link to={`/update/${t._id}`}>
+              <button>Update</button>
+            </Link>
             <button
               onClick={() => handleDelete(t._id)}
               class="btn btn-active btn-warning"
