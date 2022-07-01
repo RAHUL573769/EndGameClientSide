@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SingleTodo = ({ t }) => {
   const handleDelete = (_id) => {
@@ -17,6 +19,7 @@ const SingleTodo = ({ t }) => {
 
           if (data.deletedCount > 0) {
             window.location.reload();
+            toast("Data Deleted Succesfully");
           }
         });
     }
@@ -38,6 +41,7 @@ const SingleTodo = ({ t }) => {
             >
               Delete
             </button>
+            <ToastContainer />
           </div>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Updating = () => {
   const { id } = useParams();
 
@@ -8,7 +11,7 @@ const Updating = () => {
     event.preventDefault();
     const name = event.target.name.value;
     const day = event.target.day.value;
-    console.log(name, day);
+    // console.log(name, day);
 
     const updatedUser = { name, day };
     fetch(`http://localhost:5000/todo/${id}`, {
@@ -20,7 +23,7 @@ const Updating = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("success", data);
+        toast("Data Updated Successfully");
       });
   };
 
@@ -55,10 +58,15 @@ const Updating = () => {
           class="input input-bordered input-info w-full max-w-xs"
         />
         <br />
-        <input type="submit" value="Update User" />
+        <input
+          class="btn btn-active btn-primary"
+          type="submit"
+          value="Update User"
+        />
       </form>
+      <ToastContainer />
 
-      <h1 className="text-center text-bold">Updating User{user.name}</h1>
+      <h1 className="text-center text-bold">Updating User:{user.name}</h1>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const MainTodo = () => {
   const taskNameRef = useRef();
   const assignerRef = useRef();
@@ -28,6 +31,7 @@ const MainTodo = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast("Todo Task Added Succesfully");
       });
   };
 
@@ -73,6 +77,7 @@ const MainTodo = () => {
             <button class="btn btn-active btn-primary" onClick={handleClicking}>
               Click{" "}
             </button>
+            <ToastContainer />
           </div>
         </div>
       </div>
