@@ -9,11 +9,11 @@ const ToDo = () => {
       .then((res) => res.json())
       .then((data) => setTodos(data));
   });
-  console.log(todos);
+  // console.log(todos);
   return (
     <div class="grid  md:grid-cols-2 lg:grid-cols-3 my-7">
       {todos?.map((t) => (
-        <SingleTodo></SingleTodo>
+        <SingleTodo t={t}></SingleTodo>
       ))}
     </div>
   );

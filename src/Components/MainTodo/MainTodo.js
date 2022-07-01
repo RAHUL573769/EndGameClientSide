@@ -9,7 +9,7 @@ const MainTodo = () => {
     const assigner = assignerRef.current.value;
     const day = dayRef.current.value;
 
-    console.log(name, assigner, day);
+    // console.log(name, assigner, day);
 
     const finalData = {
       name: name,
@@ -17,7 +17,7 @@ const MainTodo = () => {
       day: day,
     };
 
-    console.log(finalData);
+    // console.log(finalData);
     fetch("http://localhost:5000/todo", {
       method: "POST",
       headers: {
